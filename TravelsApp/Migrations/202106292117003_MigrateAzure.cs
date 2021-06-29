@@ -1,9 +1,9 @@
-namespace TravelsApp.Migrations
+﻿namespace TravelsApp.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class MigrateAzure : DbMigration
     {
         public override void Up()
         {
@@ -14,7 +14,7 @@ namespace TravelsApp.Migrations
                         UserID = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        EmailAddress = c.String(nullable: false),
+                        EmailAddress = c.String(),
                         PhoneNumber = c.String(nullable: false),
                         NumAdults = c.Int(nullable: false),
                         NumKids = c.Int(nullable: false),
