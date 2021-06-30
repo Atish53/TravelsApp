@@ -256,6 +256,7 @@
     <Content Include="Views\Quotes\Index.cshtml" />
     <Content Include="Views\Quotes\ViewRecent.cshtml" />
     <Content Include="Views\Quotes\EmailQuote.cshtml" />
+    <Content Include="Views\Quotes\Unavailable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

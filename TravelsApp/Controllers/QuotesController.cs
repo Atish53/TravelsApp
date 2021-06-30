@@ -55,6 +55,12 @@ namespace TravelsApp.Controllers
             return View();
         }
 
+        // GET: Quotes/Unavailable
+        public ActionResult Unavailable()
+        {
+            return View();
+        }
+
         // GET: Quotes/Email
         public async Task<ActionResult> EmailQuote(int? id)
         {
@@ -221,6 +227,21 @@ namespace TravelsApp.Controllers
                 {
                     estPrice += 3500;
                 }
+
+                //Runs through database and checks if date booked is available
+                var Dates = from dates in db.Quotes
+                            select dates.DepartureDate;
+                var EndDates = from dates in db.Quotes
+                               select dates.ReturnDate;
+                
+
+                foreach (var item in Dates)
+                {
+                    if (item == quote.DepartureDate)
+                    {
+                        return View("Unavailable");
+                    }                    
+                }
                 numKids = quote.NumKids;
                 numAdults = quote.NumAdults;
                 estPrice *= (numAdults + numKids / 5);
@@ -229,8 +250,7 @@ namespace TravelsApp.Controllers
                 db.Quotes.Add(quote);
                 await db.SaveChangesAsync();
                 return RedirectToAction("ViewRecent");
-            }
-
+            }          
             return View(quote);
         }
 
