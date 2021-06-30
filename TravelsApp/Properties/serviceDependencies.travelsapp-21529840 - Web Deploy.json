@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/travelsappdbserver/databases/TravelsApp_db",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/travelsappdbserver-215/databases/TravelsApp_db",
       "type": "mssql.azure",
-      "connectionId": "TravelsApp_db",
+      "connectionId": "DefaultConnection",
       "secretStore": "AzureAppSettings"
     }
   }
